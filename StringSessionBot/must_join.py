@@ -1,3 +1,4 @@
+import contextlib
 from env import MUST_JOIN
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
@@ -13,20 +14,18 @@ async def must_join_channel(bot: Client, msg: Message):
             await bot.get_chat_member(MUST_JOIN, msg.from_user.id)
         except UserNotParticipant:
             if MUST_JOIN.isalpha():
-                link = "https://t.me/" + MUST_JOIN
+                link = f"https://t.me/{MUST_JOIN}"
             else:
                 chat_info = await bot.get_chat(MUST_JOIN)
                 link = chat_info.invite_link
-            try:
+            with contextlib.suppress(ChatWriteForbidden):
                 await msg.reply(
-                    f"You must join [this channel]({link}) to use me. After joining try again !",
+                    f"برای استفاده از ربات باید توی [این کانال]({link}) جوین شید!",
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup([
-                        [InlineKeyboardButton("✨ Join Channel ✨", url=link)]
+                        [InlineKeyboardButton("✨ جوین شدن ✨", url=link)]
                     ])
                 )
                 await msg.stop_propagation()
-            except ChatWriteForbidden:
-                pass
     except ChatAdminRequired:
-        print(f"I'm not admin in the MUST_JOIN chat : {MUST_JOIN} !")
+        print(f"من توی این کانال ادمین نیستم: {MUST_JOIN}!")

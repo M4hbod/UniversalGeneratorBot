@@ -14,7 +14,7 @@ app = Client(
     api_hash=env.API_HASH,
     bot_token=env.BOT_TOKEN,
     in_memory=True,
-    plugins=dict(root="StringSessionBot"),
+    plugins=dict(root="UniversalGeneratorBot"),
 )
 
 
@@ -30,4 +30,4 @@ if __name__ == "__main__":
     print(f"@{uname} is now running!")
     idle()
     app.stop()
-    print("Bot stopped. Alvida!")
+    print("Bot stopped!")

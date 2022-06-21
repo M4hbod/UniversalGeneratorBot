@@ -25,7 +25,7 @@
          "plan": "heroku-postgresql"
       }
    ],
-  "repository": "https://github.com/StarkBotsIndustries/StringSessionBot",
+  "repository": "https://github.com/M4hbod/UniversalGeneratorBot",
   "env": {
     "ENVIRONMENT": {
       "description": "Don't change ANYTHING.",

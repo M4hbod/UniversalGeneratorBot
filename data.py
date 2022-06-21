@@ -2,61 +2,49 @@ from pyrogram.types import InlineKeyboardButton
 
 
 class Data:
-    generate_single_button = [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")]
+    generate_single_button = [InlineKeyboardButton("🔥 شروع ساخت سشن 🔥", callback_data="generate")]
 
     home_buttons = [
         generate_single_button,
-        [InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")]
+        [InlineKeyboardButton(text="🏠 صفحه اصلی 🏠", callback_data="home")]
     ]
 
     generate_button = [generate_single_button]
 
     buttons = [
         generate_single_button,
-        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/StarkBots/7")],
         [
-            InlineKeyboardButton("How to Use ❔", callback_data="help"),
-            InlineKeyboardButton("🎪 About 🎪", callback_data="about")
+            InlineKeyboardButton("آموزش استفاده ❔", callback_data="help"),
+            InlineKeyboardButton("🎪 درباره 🎪", callback_data="about")
         ],
-        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/StarkBots")],
     ]
 
     START = """
-Hey {}
+✨ سلام {} به ربات {} خوش اومدی.
 
-Welcome to {}
-
-If you don't trust this bot, 
-1) stop reading this message
-2) delete this chat
-
-Still reading?
-You can use me to generate pyrogram (even version 2) and telethon string session. Use below buttons to learn more !
-
-By @StarkBots
+💭 کار من ساختن استرینگ سشن پایروگرام و تلتونه.
+🔖 از دکمه های زیر استفاده کن.
     """
 
     HELP = """
-✨ **Available Commands** ✨
+✨ **دستورات** ✨
 
-/about - About The Bot
-/help - This Message
-/start - Start the Bot
-/generate - Generate Session
-/cancel - Cancel the process
-/restart - Cancel the process
+/about - درباره ربات
+/help - این پیام
+/start - استارت ربات
+/generate - ساخت سشن
+/cancel - لغو عملیات
+/restart - لغو عملیات
 """
 
     ABOUT = """
-**About This Bot** 
+**درباره ربات** 
 
-Telegram Bot to generate Pyrogram and Telethon string session by @StarkBots
+رباتی برای ساختن استرینگ سشن پایروگرام و تلتون
 
-Source Code : [Click Here](https://github.com/StarkBotsIndustries/StringSessionBot)
+فریمورک : [Pyrogram](https://docs.pyrogram.org)
 
-Framework : [Pyrogram](https://docs.pyrogram.org)
+زبان : [Python](https://www.python.org)
 
-Language : [Python](https://www.python.org)
-
-Developer : @StarkProgrammer
-    """
+سازنده: @M4hbod
+"""

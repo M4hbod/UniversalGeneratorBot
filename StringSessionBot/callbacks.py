@@ -2,7 +2,7 @@ import traceback
 from data import Data
 from pyrogram import Client
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
-from StringSessionBot.generate import generate_session, ask_ques, buttons_ques
+from UniversalGeneratorBot.generate import generate_session, ask_ques, buttons_ques
 
 
 # Callbacks
@@ -48,13 +48,13 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
     elif query.startswith("pyrogram") or query.startswith("telethon"):
         try:
             if query == "pyrogram":
-                await callback_query.answer("Please note that the new type of string sessions may not work in all bots, i.e, only the bots that have been updated to pyrogram v2 will work!", show_alert=True)
+                await callback_query.answer("توجه کنید که استرینگ های جدید شاید در همه ربات ها عمل نکند، و مخصوص پایروگرام ورژن 2 است!", show_alert=True)
                 await generate_session(bot, callback_query.message)
             elif query == "pyrogram1":
                 await callback_query.answer()
                 await generate_session(bot, callback_query.message, old_pyro=True)
             elif query == "pyrogram_bot":
-                await callback_query.answer("Please note that this bot session will be of pyrogram v2", show_alert=True)
+                await callback_query.answer("توجه کنید که این سشن مخصوص پایروگرام ورژن 2 میباشد", show_alert=True)
                 await generate_session(bot, callback_query.message, is_bot=True)
             elif query == "telethon_bot":
                 await callback_query.answer()
@@ -68,7 +68,4 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
             await callback_query.message.reply(ERROR_MESSAGE.format(str(e)))
 
 
-ERROR_MESSAGE = "Oops! An exception occurred! \n\n**Error** : {} " \
-            "\n\nPlease visit @StarkBotsChat if this message doesn't contain any " \
-            "sensitive information and you if want to report this as " \
-            "this error message is not being logged by us!"
+ERROR_MESSAGE = "خطایی رخ داد! \n\n**ارور** : {}\n\nلطفا این مشکل را به @M4hbod گزارش کنید"
