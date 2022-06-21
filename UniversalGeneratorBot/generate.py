@@ -77,7 +77,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         return
     api_hash = api_hash_msg.text
     if not is_bot:
-        t = "لطفا شماره مورد نظرتون رو همراه با کد کشور ارسال کنید. \nمثال : `++989876543210`'"
+        t = "لطفا شماره مورد نظرتون رو همراه با کد کشور ارسال کنید. \nمثال : `+989876543210`'"
     else:
         t = "لطفا توکن خود را ارسال کنید \nمثال : `12345:abcdefghijklmnopqrstuvwxyz`'"
     phone_number_msg = await bot.ask(user_id, t, filters=filters.text)
