@@ -1,4 +1,4 @@
-# Pyrogram and Telethon String Session Bot [@UniversalGeneratorBot](https://t.me/UniversalGeneratorBot)
+# Pyrogram and Telethon String Session Bot [@UniversalGeneratorBot](https://t.me/UniversalGeneratorBot) is Persian | فارسی
 
 Telegram bot to generate pyrogram and telethon string session.
 
